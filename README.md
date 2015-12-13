@@ -1,7 +1,5 @@
 # YOLO
 
-![This is fine.](https://raw.githubusercontent.com/neonichu/lol/master/fine.png)
-
 Swift library and CLI for generating an application bundle for an executable and running
 it in the iOS simulator.
 
@@ -15,6 +13,10 @@ $ ./.build/debug/yolo run myExecutable
 
 YOLO will create a temporary application bundle for you automatically and run it in the
 simulator. Please make sure that the given executable was compiled for the iOS simulator.
+
+:warn: When using this, keep in mind that there is a lot of truth behind the name - it is
+an extreme simplification of building application bundles and only supports a small set of
+features.
 
 ## Installation
 

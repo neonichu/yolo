@@ -19,7 +19,7 @@ LDFLAGS=$(foreach lib,$(LIBS),-Xlinker $(lib))
 .PHONY: all clean lib tests
 
 all: lib
-	./$(BUILD_DIR)/yolo do
+	./$(BUILD_DIR)/yolo run ../../Desktop/freedom/.build/debug/FreedomApp
 
 clean:
 	swift build --clean
@@ -31,6 +31,6 @@ lib:
 test: lib $(BUILD_DIR)/test_runner
 	./$(BUILD_DIR)/test_runner
 
-$(BUILD_DIR)/test_runner: Tests/*.swift
+$(BUILD_DIR)/test_runner: Tests/*.swift $(BUILD_DIR)/IPA.a
 	cd Tests/Packages && swift build $(BUILD_OPTS)
-	$(SWIFTC) -o $@ $< -I$(BUILD_DIR) -I$(TEST_DIR) $(LDFLAGS)
+	$(SWIFTC) -o $@ Tests/*.swift -I$(BUILD_DIR) -I$(TEST_DIR) $(LDFLAGS)

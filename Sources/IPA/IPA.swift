@@ -39,7 +39,7 @@ private func move(source: Path, _ destination: Path) throws -> Path {
 	return destination
 }
 
-public func packageExecutable(executable: Path, _ productName: String, output: Path = ".") throws {
+public func packageExecutable(executable: Path, _ productName: String, output: Path = ".") throws -> Path {
 	let bundlePath = output + Path("\(productName).app")
 	let plistPath = Path("\(productName)-Info.plist")
 
@@ -56,4 +56,6 @@ public func packageExecutable(executable: Path, _ productName: String, output: P
 
 	let destination = try move(plistPath, bundlePath + "Info.plist")
 	>["plutil", "-convert", "binary1", destination.description]
+
+	return bundlePath
 }

@@ -3,10 +3,8 @@ import IPA
 import PathKit
 
 Group {
-  $0.command("do") {
-  	let executablePath = Path("/Users/boris/Desktop/freedom/.build/debug/FreedomApp")
-  	let temporary = try Path.processUniqueTemporary()
-  	try packageExecutable(executablePath, executablePath.lastComponent, output: temporary)
-  	try temporary.delete()
+  $0.command("run") { (executable: String) in
+  	let executablePath = Path(executable)
+  	try runExecutable(executablePath)
   }
 }.run()

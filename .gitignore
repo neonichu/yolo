@@ -1,0 +1,5 @@
+.build/
+Packages/
+
+FreedomApp.app/
+.repl_history

@@ -1,6 +1,6 @@
 # YOLO
 
-![This is fine.](fine.png)
+![This is fine.](https://raw.githubusercontent.com/neonichu/lol/master/fine.png)
 
 Swift library and CLI for generating an application bundle for an executable and running
 it in the iOS simulator.

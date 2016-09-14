@@ -1,5 +1,7 @@
 # YOLO
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 Swift library and CLI for generating an application bundle for an executable and running
 it in the iOS simulator.
 
